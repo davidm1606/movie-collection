@@ -1,0 +1,22 @@
+<div class="col-2 animated pulse bounceIn"
+     (mouseenter)="hover=true"
+     (mouseleave)="hover=false"
+     align="center">
+
+      <div class="card" style="width: 12rem;">
+
+          <img class="card-img-top img-fluid img-thumbnail" [src]="movie.img | setMoviePath:imgPath" alt="Card image cap">
+
+          <div class="card-body" [ngClass]="{'bg-light' : hover}">
+
+          <h5 class="card-title">{{movie.name}}</h5>
+
+          <ngb-rating [(rate)]="movie.rate" [readonly]="true" max="10"> </ngb-rating>
+
+          <pre>Rating<b> {{movie.rate}}</b></pre>
+
+              <p class="card-text">{{movie.length}}</p>
+
+          </div>
+      </div>
+</div>

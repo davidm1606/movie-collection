@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-12">
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" routerLink="/">Movie Collection</a>
+            <form name="queryForm" class="form-inline my-2 my-lg-0">
+                <input class="form-control form-control-lg" type="search"
+                       [(ngModel)]="searchQuery"
+                       [ngModelOptions]="{standalone: true}"
+                       (ngModelChange)="onQueryChange($event)"
+                       placeholder="Search"
+                       aria-label="Search">
+            </form>
+        </nav>
+    </div>
+</div>

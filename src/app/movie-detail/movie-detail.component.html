@@ -1,0 +1,23 @@
+<div class="container">
+
+  <div class="row border-top border-bottom">
+  <!--IMAGE -->
+    <div class="col-xs-2 col-sm-2 offset-sm-1 " align="center">
+      <img class="" [src]="movie.img | setMoviePath:imgPath" alt="Card image cap">
+    </div>
+    <!--/IMAGE-->
+
+    <!--Detail-->
+    <div class="col-xs-2 col-sm-5 offset-sm-2 offset-md-2 offset-lg-1 align-self-center p-2">
+
+      <div id="detailBody" align="center">
+        <h4>{{movie.name}}</h4>
+        <ngb-rating [(rate)]="movie.rate" max="10"> </ngb-rating>
+        <pre>Rating<b> {{movie.rate}}</b></pre>
+        <p class="">Duration : {{movie.length}}</p>
+        <p> {{movie.description}}</p>
+      </div>
+      <!--/Detail-->
+    </div>
+  </div>
+</div>

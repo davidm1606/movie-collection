@@ -1,0 +1,14 @@
+<div class="row" align="center">
+
+    <app-movie-list-item
+            *ngFor="let movie of movies | movieNameFilter:searchQuery"
+            [movie]="movie"
+            (click)="selectMovie(movie,movie.key)">
+    </app-movie-list-item>
+
+</div>
+
+
+
+
+
