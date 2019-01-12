@@ -43,6 +43,7 @@ export class MovieListComponent implements OnInit {
           });
   }
   selectMovie(movie, movieKey ): void {
+      sessionStorage.setItem('movieSaved', 'false');
     this.data.movie = movie;
     this.router.navigate(['/moviedetail', movieKey]);
 

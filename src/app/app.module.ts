@@ -14,11 +14,13 @@ import { MovieNameFilterPipe } from './pipes/movie-name-filter.pipe';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NavigationTopComponent } from './navigation-top/navigation-top.component';
 import { SetMoviePathPipe } from './pipes/set-movie-path.pipe';
+import { Page404Component } from './page404/page404.component';
 
 const appRoutes: Routes = [
     {path: 'movies', component : MovieListComponent},
     {path: 'moviedetail/:key' , component : MovieDetailComponent},
-    {path: '', component : MovieListComponent}
+    {path: '', component : MovieListComponent},
+    { path: '**', component: Page404Component }
 ];
 
 @NgModule({
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     MovieDetailComponent,
     MovieNameFilterPipe,
       NavigationTopComponent,
-      SetMoviePathPipe
+      SetMoviePathPipe,
+      Page404Component
   ],
   imports: [
     BrowserModule,

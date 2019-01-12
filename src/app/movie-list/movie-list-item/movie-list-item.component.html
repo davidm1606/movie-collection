@@ -5,7 +5,8 @@
 
       <div class="card" style="width: 12rem;">
 
-          <img class="card-img-top img-fluid img-thumbnail" [src]="movie.img | setMoviePath:imgPath" alt="Card image cap">
+          <img class="card-img-top img-fluid img-thumbnail"
+               [src]="movie.img | setMoviePath:imgPath" alt="Card image cap">
 
           <div class="card-body" [ngClass]="{'bg-light' : hover}">
 
