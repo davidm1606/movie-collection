@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
 
+A live version can be found - https://infallible-davinci-bdee05.netlify.com/
+
 ## Dependencies
  - node ~8.12
  - npm  ~6.4
