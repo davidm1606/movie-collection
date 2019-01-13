@@ -15,6 +15,7 @@ export class UserDataService {
     public moviesPopulated = false;
 
     public searchQuery = new BehaviorSubject('');
+    public showSearchBar = new BehaviorSubject('');
 
     constructor() { }
 

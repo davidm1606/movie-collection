@@ -7,13 +7,17 @@ import {UserDataService} from '../services/user-data.service';
   styleUrls: ['./navigation-top.component.scss']
 })
 export class NavigationTopComponent implements OnInit {
-  searchQuery: string;
+  showSearchBar: string = 'true';
+    searchQuery: string;
   constructor( private appData: UserDataService) { }
 
   ngOnInit() {
       this.appData.searchQuery.subscribe(searchQuery => {
           this.searchQuery = searchQuery;
       });
+      this.appData.showSearchBar.subscribe(showSearchBar => {
+          this.showSearchBar = showSearchBar;
+    });
   }
   onQueryChange(message) {
     this.appData.changeSearchQuery(message);

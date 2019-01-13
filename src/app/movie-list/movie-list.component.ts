@@ -12,7 +12,8 @@ import {MovieCollectionService} from '../services/movie-collection.service';
   styleUrls: ['./movie-list.component.scss']
 })
 export class MovieListComponent implements OnInit {
-  movies: Movie[];
+  showSearchBar: string;
+    movies: Movie[];
   searchQuery: string;
 
   constructor( private movieCollection: MovieCollectionService
@@ -23,6 +24,7 @@ export class MovieListComponent implements OnInit {
   }
 
   ngOnInit() {
+      // Check to see if movies have been downloaded
     if (!this.data.moviesPopulated) {
         this.getMovies();
         this.data.moviesPopulated = true;
@@ -31,9 +33,12 @@ export class MovieListComponent implements OnInit {
     else {
       this.movies=this.data.movies;
     }
+    // listen for changes in search query
     this.data.searchQuery.subscribe(searchQuery => {
       this.searchQuery = searchQuery;
     });
+    // Always show the search field on this component
+    this.data.showSearchBar.next('true');
   }
   getMovies(): void {
       this.movieCollection.getMovies().subscribe(

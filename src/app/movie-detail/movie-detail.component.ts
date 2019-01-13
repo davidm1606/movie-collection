@@ -16,7 +16,6 @@ export class MovieDetailComponent implements OnInit {
   constructor( private route: ActivatedRoute, private data: UserDataService) {  }
 
   ngOnInit() {
-
       // Check for Movie in case of reload
       if (sessionStorage.getItem('movieSaved') !== 'true') {
           this.movie = this.data.movie;
@@ -26,5 +25,6 @@ export class MovieDetailComponent implements OnInit {
       else {
           this.movie=JSON.parse(sessionStorage.getItem('movie'));
       }
+      this.data.showSearchBar.next('false');
   }
 }
